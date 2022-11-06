@@ -8,6 +8,9 @@
     --logo-header-color: #000000;
     --card-set-gap: 30px;
     --border: 1px solid #ECECEC; 
+    --hero-color: rgba(47, 48, 58, 0.4);
+    --card-shadow: 0px 2px 1px 0 rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0 rgba(0, 0, 0, 0.14), 0px 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
 body {
@@ -120,6 +123,9 @@ img {
 }
 .header-mail, .header-tel {
    
+        display: flex;
+        align-items: center;
+        gap: 10px;
         font-weight: 500;
         line-height: calc(16/14);
         letter-spacing: 0.02em;
@@ -132,12 +138,27 @@ img {
 .header-mail:hover, .header-mail:focus {
     color: var(--accent-color);
 }
+.header-icon {
+    fill: currentColor;
+}
 /*-----------------HERO----------------*/
 .hero-section {
+    max-width: 1600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 200px;
     padding-bottom: 200px;
+    background-image: linear-gradient(
+        to right,
+        var(--hero-color),
+        var(--hero-color)
+    ),
+    url(../images/studio/header.jpg);
+    background-size: cover;
+    background-position: center;
     text-align: center;
-    background-color: var(--main-background-color);
+    
 }
 .hero-title {
     margin-right: auto;
@@ -169,8 +190,9 @@ img {
 }
 .hero-button:hover,
 .hero-button:focus {
+    
     color: var(--accent-color);
-}
+    }
 /*-----------------Переваги----------------*/
 
 .section {
@@ -189,6 +211,15 @@ padding-bottom: 94px;
 .advantages-container .advantages-list:not(:last-child) {
     margin-right: 30px;
 }
+.advantages-icon {
+    padding: 25px 100px;
+    margin-bottom: 30px;
+    background-color: #F5F4FA;
+
+}
+
+
+
 .advantages-title {
     margin-bottom: 10px;
     font-size: 14px;
@@ -233,10 +264,44 @@ padding-bottom: 94px;
 .team-list {
     display: flex;
     background-color: #F5F4FA;
+    
  }
 .team-list .team-item:not(:last-child) {
  margin-right: 30px;
         }
+
+.team-item {
+    box-shadow: var(--card-shadow);
+}
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-top: 16px;
+    
+        color: #AFB1B8;
+   } 
+
+
+.socials-link:hover,  
+.socials-link:focus {
+       background-color :var(--accent-color);
+       color: var(--background-color);
+       
+}
+
+.socials-icon {
+    fill: currentColor;
+}
 
 .bottom-subtitle {
     padding-top: 30px;
@@ -267,13 +332,51 @@ padding-bottom: 94px;
     text-align: center;
     color: var(--main-text-color);
 }
+/*-----------------Clients----------------*/
+.clients-list {
+    display: flex;
+    }
+
+.clients-item {
+    padding: 16px 32px;
+   border: 1px solid #AFB1B8;
+    color: #AFB1B8;
+}
+.clients-item:hover, 
+.clients-item:focus {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+.clients-title {
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: calc(42/36);
+    text-align: center;
+}
+.clients-list .clients-item:not(:last-child) {
+    margin-right: 30px;
+}
+.clients-icon {
+    fill: currentColor;
+}
+
+
 /*-----------------FOOTER----------------*/
 
 .page-footer {
+       background-color: var(--main-background-color);
+}
+.footer-container {
+    display: flex;
+}
+
+.footer-contacts {
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color: var(--main-background-color);
+    margin-right: 70px;
 }
+
 
 .logo-footer {
           color: var(--secondary-title-color);
@@ -305,6 +408,50 @@ padding-bottom: 94px;
 .footer-tel:focus {
     color: var(--accent-color);
 }
+.footer-socials {
+   
+    margin-top: 72px;
+    margin-bottom: 100px;
+    color: var(--background-color);
+}
+.footer-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 206px;
+    color: #FFFFFF;
+}
+.socials-footer-link {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--background-color);
+}
+
+.socials-footer-icon {
+    fill: currentColor;
+}
+.footer-title {
+    
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16/14);
+     color: var(--background-color);
+ }
+    .socials-footer-link:hover,
+    .socials-footer-link:focus {
+        background-color: var(--accent-color);
+        color: var(--background-color);
+    
+        }
+    
 /*-----------------PORTFOLIO----------------*/
 /*-----------------НАШІ ПРОЄКТИ----------------*/
 
@@ -338,7 +485,9 @@ margin-bottom: 50px;
 .nav-button:hover,
 .nav-button:focus {
     color: var(--secondary-title-color);
-    background-color: var(--accent-color); }
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+ }
 
     .nav-project-list,
         .nav-button.current {
@@ -363,6 +512,9 @@ margin-bottom: 50px;
     flex-basis: calc(100% / 3 - var(--card-set-gap));
         margin-right: var(--card-set-gap);
         margin-bottom: var(--card-set-gap)
+}
+.project-item:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 .card-thumb {
 padding: 20px 24px;
